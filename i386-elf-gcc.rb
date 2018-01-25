@@ -8,7 +8,7 @@ class I386ElfGcc < Formula
   
   depends_on 'gmp'
   depends_on 'libmpc'
-  depends_on 'mpfr2'
+  depends_on 'mpfr'
   depends_on 'i386-elf-binutils'
 
   def install
@@ -26,7 +26,7 @@ class I386ElfGcc < Formula
                              "--enable-languages=c",
                              "--without-headers",
                              "--with-gmp=#{Formula["gmp"].opt_prefix}",
-                             "--with-mpfr=#{Formula["mpfr2"].opt_prefix}",
+                             "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
                              "--with-mpc=#{Formula["libmpc"].opt_prefix}"
       system 'make all-gcc'
       system 'make install-gcc'
